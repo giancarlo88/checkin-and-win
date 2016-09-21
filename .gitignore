@@ -1,0 +1,13 @@
+.DS_Store
+.sass-cache
+.tmp
+.lock
+Thumbs.db
+/node_modules/
+/bower_components/
+uploads/
+/tests/
+/test/
+/dist/
+/vendor/
+/assets/css/bootstrap

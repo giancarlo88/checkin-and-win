@@ -25,7 +25,7 @@ if ( isset($_GET['fbid']) && $_GET['fbid'] ) {
  */
 
 
-elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confirm' ) {
+elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confnirm' ) {
 
 	$cabacha = isset($_POST[$_POST['cabacha']]) && $_POST[$_POST['cabacha']] ? $_POST[$_POST['cabacha']] : '';
 	$first_name = isset($_POST['first_name']) && $_POST['first_name'] ? $_POST['first_name'] : '';

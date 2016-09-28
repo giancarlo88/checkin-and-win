@@ -47,7 +47,7 @@ AppConfig::set( array(
 		 * Facebook application title
 		 * By default it appears in social sharing options
 		 */
-		'app_title' => 'Ticket To Amazing',
+		'app_title' => 'Check-in and WIN!',
 
 
 		/** Facebook application image file name

@@ -71,23 +71,21 @@ $thisPage;
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/scrollY.js"></script>
 <script src="../../<?php echo AppConfig::get('assets'); ?>/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/instafeed.min.js"></script>
 <script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
 
 </head>
 <body>
-    <!--<div class = "hd__page-header">
-    <img class = "hd__tc-logo" src = "./assets/images/tc_logo_175.png">
-    <img class = "hd__dp-logo" src = "./assets/images/dp_logo_header.png">
+    <div class = "hd__page-header">
+    
    
         
     <div class = "hd__navigation-container">
     <div id = "hd__navigation" class = "hd__navigation">
     <ul>
     <li <?php if ($thisPage == 'tab') {echo "class = 'currentPage'";}?>><a href = "tab.php">HOME</a></li> |
-        <li <?php if ($thisPage == "register") {echo "class = 'currentPage'";}?>><a class = "hd__register" href = "register.php">ENTER</a></li> |
+        <li <?php if ($thisPage == "checkIn") {echo "class = 'currentPage'";}?>><a class = "hd__register" href = "check-in.php">CHECK IN</a></li> |
         <li <?php if ($thisPage == "tcs") {echo "class = 'currentPage'";}?>><a href = "terms-conditions.php">Ts & Cs</a></li>
     </ul>
     </div>
     </div>
-</div> -->
+</div>

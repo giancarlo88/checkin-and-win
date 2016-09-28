@@ -20,10 +20,10 @@ $detect = new Mobile_Detect;
 
 				
 				<div class="container tab__overlay">
-					<h2> <span class="bolded">AMAZING</span> IS COMING... </h2>
-					<p class="tab__byline"> When you press the login button, you can see all the places you've "checked in" recently.
+					<h2>Check in and <span class="bolded">WIN!</span></h2>
+					<p class="tab__byline"> Login below, then post a picture of your favourite Outfit item to enter the contest!
 					</p>
-					<a class="tab__fb-login" href="register.php"><img src="./assets/images/login_btn.png"></a>
+					<a class="tab__fb-login" href="check-in.php"><img src="./assets/images/login_btn.png"></a>
 				</div>
 
 

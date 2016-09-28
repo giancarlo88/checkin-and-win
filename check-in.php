@@ -4,24 +4,79 @@
 /**
  * Default tab page
  */
-$thisPage = "register";
+$thisPage = "checkIn";
 require './config.php';
 require './template/ValidateFormModel.php';
 require './template/header.php';
 // require './template/navigation.php';
 
 ?>
-
-<div class = "api-container">
-<button class="api">GET LOCATIONS</button>      
-</div>
-<!--<div id="instafeed">
-</div>
+	<!--<div class = "info"></div>-->
 <div class="app-wrapper">
+	<form id="photo-upload" class="photo-upload" method="post" enctype="multipart/form-data">
+		<div class = "info2">Store location: 
+			<span class="location">
+				<div class="spinner">
+					<div class="rect1"></div>
+					<div class="rect2"></div>
+					<div class="rect3"></div>
+					<div class="rect4"></div>
+					<div class="rect5"></div>
+				</div>
+			</span><br>
+		</div>
+		<label>1. Open a picture to upload:</label><br>
+		<input id = "file" type = "file" name="file"><br>
+		<label>2. Click <input type="button" class="confirm" disabled>here</input> to upload the photo of your fave Outfit item to Facebook!</p>
+		<img class="previewing">
+		<h6 class="message"></h6>
+		<div class="text-center">
+			<input type="text" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
+			<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
+			<input type="hidden" name="fbid" value="" id="fbidField">
+		
+			<div id="modal1" data-backdrop="static" class="scr__modal modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<img class="previewing modal-preview" src="">
+					</div>
+					<div class="modal-body">
+						<p>You're about to upload this photo to Facebook. Is that ok?.</p>
+					</div>
+					<div class="modal-footer">
+						<input type ="submit" class="btn button confirm-upload" value="Yes"></button>
+						<button class="btn button" data-dismiss="modal">No </button>
+</form>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+
+
+
+
+
+
+<!--<div class = "info-no-checkin">
+<p>Sorry, we couldn't find your check-in at an Outfit store. Please try again.</p>
+
+
+</div> -
+
+
+
+	<div class = "info-success">
+		<p>Great! We've registered your check-in! Please fill out the form below to enter the contest</p>
+
 	<div class="reg__bg-wrapper">
 		<div class = "reg__registration">
 			<div class="reg__instructions">
-				<div class = "steps">
+				<!--<div class = "steps">
 					<img src = "./assets/images/enterdetails1.png"> <span class = "step step1text">PLEASE LIKE OUR FACEBOOK PAGE.</span> 
 						<div class = "reg__button-container">
 							<span class="btn-fb-like">
@@ -35,7 +90,7 @@ require './template/header.php';
 						
 				</div>
 			</div>
-				
+		</div>
 			<form id="registerForm" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="form-horizontal" role="form">
 				<div class = "reg__form-container">	
 						<input type="text" name="first_name" id="firstNameField" placeholder="First Name" class="reg__form">
@@ -58,10 +113,10 @@ require './template/header.php';
 							<input id = "num6" class = "reg__mystery-number-form" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >	
 						</div>
 					</div>	
-						<div class = "reg__checkbox-container">
+						<div class = "reg__checkbox-container"> 
 							<div class="reg__checkbox">
 								<label>
-									<input type="checkbox" checked name="dubaiparks_subscription" id="dubaiparksSubscriptionField"> I want to receive emails from Dubai Parks and Resorts
+									<input type="checkbox" checked name="dubaiparks_subscription" id="dubaiparksSubscriptionField"> I want to receive emails from Outfit
 								</label>
 							</div>
 							<div class="reg__checkbox">
@@ -76,13 +131,7 @@ require './template/header.php';
 				
 
 					<div class = "reg__btn-container">
-						<div class="text-center">
-							<input type="text" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
-							<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
-							<input type="hidden" name="fbid" value="" id="fbidField">
-							<input type="submit" name="submit" value="Confirm" id="reg__submitBtn" class="button">
-
-						</div> 
+					
 					</form>
 					</div>
 					<div class="reg__container-tc-priv">
@@ -95,14 +144,10 @@ require './template/header.php';
 				</div>
 		</div>
 					</div>
-				
-				
-
-			</div>
-			
-			
+			</div>			
         </div>
-</div>-->
+		-->
+</div>
 
 
-	 <?php require './template/footer.php'; ?> 
+	 <?php require './template/footer.php'; ?>

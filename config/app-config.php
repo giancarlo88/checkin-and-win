@@ -28,26 +28,26 @@ AppConfig::set( array(
 		/**
 		 * Client's complete official name i.e. Dorothy Perkins
 		 */
-		'app_client' => 'Thomas Cook',
+		'app_client' => 'Outfit',
 
 
 		/**
 		 * Folder/Directory name for client on server i.e. dorothyperkins
 		 */
-		'app_client_dir' => 'thomascook',
+		'app_client_dir' => 'giancarlo',
 
 
 		/**
 		 * Folder/Directory name of this application
 		 */
-		'app_dir' => 'dubai_parks',
+		'app_dir' => 'checkin_and_win',
 
 
 		/**
 		 * Facebook application title
 		 * By default it appears in social sharing options
 		 */
-		'app_title' => 'Check-in and WIN!',
+		'app_title' => 'Outfit: Check In and WIN!',
 
 
 		/** Facebook application image file name
@@ -61,7 +61,7 @@ AppConfig::set( array(
 		/**
 		 * Facebook application description
 		 */
-		'app_description' => 'Crack the code to win tickets to amazing.',
+		'app_description' => 'Post a photo of an item at an outfit store to WIN!.',
 
 		/**
 		 * Terms & Conditions URL
@@ -105,25 +105,25 @@ AppConfig::set( array(
 		/**
 		 * Facebook application NameSpace
 		 */
-		'facebook_namespace' => 'ticket-to-amazing',
+		'facebook_namespace' => 'outfit-check-in',
 
 
 		/**
 		 * Facebook application ID
 		 */
-		'facebook_app_id' => '1761519824086921',
+		'facebook_app_id' => '255255454870700',
 
 
 		/**
 		 * Facebook application secret
 		 */
-		'facebook_app_secret' => '365506e76ddf44dc8c7203145de6be33',
+		'facebook_app_secret' => 'fc2ad8cbd7e8cb61294060a724ad7331',
 
 
 		/**
 		 * Client Facebook page name
 		 */
-		'facebook_page' => 'thomascook',
+		'facebook_page' => 'Outfit Fashion UK',
 
 
 		/**
@@ -161,7 +161,7 @@ AppConfig::set( array(
 		/**
 		 * Client's Twitter handle WITHOUT '@' i.e. ThomasCookUK
 		 */
-		'twitter_handle' => 'ThomasCookUK',
+		'twitter_handle' => 'OutfitUK',
 
 
 		/**

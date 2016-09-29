@@ -1,9 +1,9 @@
 <?php
+require_once("./config.php");
 
-$fb_id = $_POST["fbid"];
 
 $current_timestamp = time();
-
+$fb_id = $_POST["fbid"];
 if ($fb_id) {
     $img_src = $current_timestamp . "_" . $fb_id;
 } else {
@@ -28,10 +28,12 @@ if(isset($_FILES["file"]["type"]))
                     $targetPath = __DIR__."/upload/" . $file_name; // Target path where file is to be stored
                     move_uploaded_file($sourcePath, $targetPath) ; // Moving Uploaded file
                     echo $file_name;
+                    require_once("./template/ValidateFormModel.php");
                     }
                 
     } else {
         echo "<span id='invalid'>***Invalid file Size or Type***<span>";
     }
 }
+
 ?>

@@ -85,7 +85,16 @@ a {
   background-color: white;
 }
 
+.thumbnails {
+  padding-top: 300px;
+}
 
+.slideshow-image {
+  width:100px;
+  height: 100px;
+  overflow: hidden;
+  
+}
 
 .api-container {
   display: flex;

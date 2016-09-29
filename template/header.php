@@ -40,6 +40,7 @@ $thisPage;
     <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/font-awesome-4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/style.css">
     <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/bootstrap.css">
+    <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/lightslider.css">
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php echo AppConfig::get('assets'); ?>/images/favicon.png">
     
@@ -72,7 +73,7 @@ $thisPage;
 <script src="assets/js/scrollY.js"></script>
 <script src="../../<?php echo AppConfig::get('assets'); ?>/js/bootstrap.min.js"></script>
 <script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
-
+<script src="assets/js/lightslider.js"></script>
 </head>
 <body>
     <div class = "hd__page-header">

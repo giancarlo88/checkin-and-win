@@ -14,7 +14,7 @@ DBConfig::setHost('localhost');
 /**
  * Database name
  */
-DBConfig::setName('thomascook');
+DBConfig::setName('outfit');
 
 
 /**
@@ -32,7 +32,7 @@ DBConfig::setPassword('4Fb8JUrswjZ2');
 /**
  * Database table prefix
  */
-DBConfig::setTablePrefix('dubai_parks_');
+DBConfig::setTablePrefix('checkin_and_win_');
 
 
 /**

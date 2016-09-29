@@ -14,25 +14,25 @@ DBConfig::setHost('localhost');
 /**
  * Database name
  */
-DBConfig::setName('tc_dubai_parks');
+DBConfig::setName('outfit');
 
 
 /**
  * Database username
  */
-DBConfig::setUser('root');
+DBConfig::setUser('production');
 
 
 /**
  * Database password
  */
-DBConfig::setPassword('');
+DBConfig::setPassword('4Fb8JUrswjZ2');
 
 
 /**
  * Database table prefix
  */
-DBConfig::setTablePrefix('dubai_parks_');
+DBConfig::setTablePrefix('checkin_and_win_');
 
 
 /**

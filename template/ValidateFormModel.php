@@ -1,8 +1,8 @@
 <?php
-
 /**
  * Setup user journey for existing users
  */
+
 if ( isset($_GET['fbid']) && $_GET['fbid'] ) {
 	$fbid = isset($_GET['fbid']) && $_GET['fbid'] ? $_GET['fbid'] : '';
 
@@ -23,10 +23,6 @@ if ( isset($_GET['fbid']) && $_GET['fbid'] ) {
 /**
  * Form validation
  */
-
-
-elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confnirm' ) {
-
 	$cabacha = isset($_POST[$_POST['cabacha']]) && $_POST[$_POST['cabacha']] ? $_POST[$_POST['cabacha']] : '';
 	$first_name = isset($_POST['first_name']) && $_POST['first_name'] ? $_POST['first_name'] : '';
 	$last_name = isset($_POST['last_name']) && $_POST['last_name'] ? $_POST['last_name'] : '';
@@ -34,7 +30,7 @@ elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confnirm' 
 	$phone = isset($_POST['phone']) && $_POST['phone'] ? $_POST['phone'] : '';
 	$fbid = isset($_POST['fbid']) && $_POST['fbid'] ? $_POST['fbid'] : '';
 	$tc_subscription = isset($_POST['tc_subscription']) && $_POST['tc_subscription'] === 'on' ? true : false;
-	$dubaiparks_subscription = isset($_POST['dubaiparks_subscription']) && $_POST['dubaiparks_subscription'] === 'on' ? true : false;
+	$outfit_subscription = isset($_POST['outfit_subscription']) && $_POST['outfit_subscription'] === 'on' ? true : false;
 
 	if ( ! empty($cabacha) ) {
 		$error = 'Potential bot detected from IP: ' . AppFunction::getIP();
@@ -80,12 +76,12 @@ elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confnirm' 
 				$user->email = $email;
 				$user->phone = $phone;
 				$user->tc_subscription = $tc_subscription;
-				$user->dubaiparks_subscription = $dubaiparks_subscription;
+				$user->outfit_subscription = $outfit_subscription;
 				$user->from_mobile = $detect->isMobile();
 				$user->from_tablet = $detect->isTablet();
 
 				if ( $user->save() ) {
-					header('Location: scratch.php?uid=' . $user->id);
+					//header('Location: thank-you.php?uid=' . $user->id);
 					//header('Location: invite.php?uid=' . $user->id);
 				}
 				else {
@@ -93,11 +89,10 @@ elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confnirm' 
 				}
 			}
 			else {
-				header('Location: scratch.php?uid=' . $isMember['data'][0]->id);
+				//header('Location: thank-you.php?uid=' . $isMember['data'][0]->id);
 				//header('Location: invite.php?uid=' . $isMember['data'][0]->id);
 			}
 		}
 	}
-}
 
 if ( isset($error) ) error_log($error . ' from IP: ' . AppFunction::getIP());

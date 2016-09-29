@@ -11,7 +11,7 @@ $shareCopies = array(
 $links = array(
 		'tc_link' => 'http://bit.ly/1HNca5w',
 		'tc_airlines' => 'http://thomascookairlines.com',
-		'dubai_parks_link' => 'http://www.dubaiparks.com/en',
+		'dubai_parks_link' => 'http://www.outfit_.com/en',
 		'website_link' => 'http://unitedapps.co/ticket-to-amazing',
 		'twitter_url' => 'http://unitedapps.co/ticket-to-amazing'
 	);

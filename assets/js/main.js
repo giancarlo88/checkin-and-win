@@ -219,7 +219,8 @@ var mnTries = 0;
 			
 			framework.locationName = [cities[closest][0]][0];
 			framework.locationCode = [cities[closest][3]][0];
-			$(".location").html(framework.locationName)
+			$(".location").html(framework.locationName);
+			$("#locationField").val(framework.locationName);
 			}
 
 			
@@ -230,12 +231,15 @@ var mnTries = 0;
 			$("#modal1").modal("show");
 		})
 
-		$(".photo-upload").on('submit', function(e) {
-			e.preventDefault();
+		$("#photo-upload").on('submit', function(e) {
+			$(".submit, .no ").attr("disabled", true);
+			formData = new FormData(this);
+			formData.append(submit, "submit")
+			console.log(formData)
         	$.ajax({
             url: "ajax_php_file.php", // Url to which the request is send
             type: "POST", // Type of request to be send, called as method
-            data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+            data: formData, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
             contentType: false, // The content type used when sending data to the server.
             cache: false, // To unable request pages to be cached
             processData: false, // To send DOMDocument or non processed data file it is set to false
@@ -243,7 +247,6 @@ var mnTries = 0;
                 {
                     photoUrl = "http://www.united-agency-server.co.uk/giancarlo/checkin_and_win/upload/"+data;
                     $(".picture-message").html(data);
-                    console.log(photoUrl);
 			        FB.api(
   						'/photos/',
   						'POST',
@@ -252,12 +255,13 @@ var mnTries = 0;
 							"url": photoUrl
 						},
   						function(response) {
-							console.log(framework.userid)
+							
       						self.location.href ="thank-you.php?fbid="+$("#fbidField").val();
  						}	
 					);
 				}
 			})
+			return e.preventDefault();
 		})
 	
 
@@ -299,9 +303,9 @@ var mnTries = 0;
 		if (!$('[id="photo-upload"]').length) return;
 		if (response && response.status === 'connected') {
 			var formFields = {
-				//firstNameField: $('[id=firstNameField]'),
-				//lastNameField: $('[id=lastNameField]'),
-				//emailField: $('[id=emailField]'),
+				firstNameField: $('[id=firstNameField]'),
+				lastNameField: $('[id=lastNameField]'),
+				emailField: $('[id=emailField]'),
 				//phoneField: $('[id=phoneField]'),
 				fbidField: $('[id=fbidField]'),
 				//num1: $('[id=num1]'),
@@ -310,17 +314,17 @@ var mnTries = 0;
 				//num4: $('[id=num4]'),
 				//num5: $('[id=num5]'),
 				//num6: $('[id=num6]'),
-				//submitBtn: $('[id=reg__submitBtn]')
+				submitBtn: $('[id=yes]')
 			};
 
 			FB.api('/me?fields=first_name,last_name,email', function(info) {
-			//	formFields.firstNameField.val(info.first_name);
-			//	formFields.lastNameField.val(info.last_name);
-			//	formFields.emailField.val(info.email);
+				formFields.firstNameField.val(info.first_name);
+				formFields.lastNameField.val(info.last_name);
+				formFields.emailField.val(info.email);
 				formFields.fbidField.val(info.id);
 			});
 
-			//return framework.validateRegisterForm(formFields);
+			return framework.validateRegisterForm(formFields);
 		} else {
 			framework.fbLogin(function(response) {
 				if (response && response.status === 'connected') {
@@ -351,8 +355,8 @@ var mnTries = 0;
 
 
 
-	// framework.validateRegisterForm = function(formFields) {
-	// 	formFields.submitBtn.on('click', function(e) {
+	framework.validateRegisterForm = function(formFields) {
+	 	formFields.submitBtn.on('click', function(e) {
 	// 		var numbers = {
 	// 			1: formFields.num1.val(),
 	// 			2: formFields.num2.val(),
@@ -364,25 +368,25 @@ var mnTries = 0;
 
 	// 		var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]);
 
-	// 		if (formFields.firstNameField.val() == '') {
-	// 			alert('First Name is required.');
-	// 			formFields.firstNameField.focus();
-	// 		} else if (formFields.firstNameField.val().length > 100) {
-	// 			alert('Please enter a valid first name.');
-	// 			formFields.firstNameField.focus();
-	// 		} else if (formFields.lastNameField.val() == '') {
-	// 			alert('Last name is required.');
-	// 			formFields.lastNameField.focus();
-	// 		} else if (formFields.lastNameField.val().length > 100) {
-	// 			alert('Please enter a valid last name.');
-	// 			formFields.lastNameField.focus();
-	// 		} else if (formFields.emailField.val() == '') {
-	// 			alert('E-mail address is required.');
-	// 			formFields.emailField.focus();
-	// 		} else if (!framework.isValidEmail(formFields.emailField.val()) || (formFields.emailField.val().length > 255)) {
-	// 			alert('Please enter a valid e-mail address.');
-	// 			formFields.emailField.focus();
-	// 		}
+	 		if (formFields.firstNameField.val() == '') {
+				alert('First Name is required.');
+				formFields.firstNameField.focus();
+			} else if (formFields.firstNameField.val().length > 100) {
+				alert('Please enter a valid first name.');
+				formFields.firstNameField.focus();
+			} else if (formFields.lastNameField.val() == '') {
+				alert('Last name is required.');
+				formFields.lastNameField.focus();
+			} else if (formFields.lastNameField.val().length > 100) {
+				alert('Please enter a valid last name.');
+				formFields.lastNameField.focus();
+			} else if (formFields.emailField.val() == '') {
+				alert('E-mail address is required.');
+				formFields.emailField.focus();
+			} else if (!framework.isValidEmail(formFields.emailField.val()) || (formFields.emailField.val().length > 255)) {
+				alert('Please enter a valid e-mail address.');
+				formFields.emailField.focus();
+			}
 	// 		else if (combinedNumbers.length != 0 && combinedNumbers.length != 6) {
 	// 			alert("Please enter the complete code.")
 	// 		} else if (combinedNumbers.length != 0 && (!$.isNumeric(numbers[1]) || !$.isNumeric(numbers[2]) || !$.isNumeric(numbers[3]) || !$.isNumeric(numbers[4]) || !$.isNumeric(numbers[5]) || !$.isNumeric(numbers[6]))) {
@@ -401,13 +405,13 @@ var mnTries = 0;
 	// 				self.location.href = "./thank-you.php"
 						
 	// 			}, 1000);
-	// 			return e.preventDefault;
-	// 		} else {
-	// 			return e.preventDefault;
-	// 		}
-	// 		return e.preventDefault();
-	// 	});
-
+	//		return e.preventDefault;
+			 else {
+				return e.preventDefault;
+			}
+			return e.preventDefault();
+		});
+	}
 	// 	var unlikeWarning = $('.reg__unlike-warning');
 	// 	if (unlikeWarning.length) {
 	// 		FB.Event.subscribe('edge.remove', function(url, el) {
@@ -423,19 +427,19 @@ var mnTries = 0;
 	// };
 
 
-	// /**
-	//  * Email validation
-	//  */
-	// framework.isValidEmail = function(email) {
-	// 	if (typeof email !== 'string' || email === '')
-	// 		return false;
+	/**
+	 * Email validation
+	 */
+	framework.isValidEmail = function(email) {
+		if (typeof email !== 'string' || email === '')
+			return false;
 
-	// 	var has_at = new RegExp(/@/);
-	// 	var has_dot = new RegExp(/\./);
-	// 	var dot_at_end = new RegExp(/\./);
+		var has_at = new RegExp(/@/);
+		var has_dot = new RegExp(/\./);
+		var dot_at_end = new RegExp(/\./);
 
-	// 	return (has_at.test(email) && has_dot.test(email) && !dot_at_end.test(email.substr(email.length - 1)));
-	// };
+		return (has_at.test(email) && has_dot.test(email) && !dot_at_end.test(email.substr(email.length - 1)));
+	};
 
 
 	/**

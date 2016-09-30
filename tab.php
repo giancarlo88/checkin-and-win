@@ -29,14 +29,38 @@ $detect = new Mobile_Detect;
 <div class="thumbnails">  
 
 <div id="lightSlider">
-<?php 
-$dir = "./upload/";
-$files = scandir($dir, 1);
+<?php
+function autoRotateImage($image) {
+    $orientation = $image->getImageOrientation();
+    switch($orientation) {
+        case imagick::ORIENTATION_BOTTOMRIGHT:
+            $image->rotateimage("#000", 180); // rotate 180 degrees
+        break;
 
-for ($i=3; $i<20; $i++){
+        case imagick::ORIENTATION_RIGHTTOP:
+            $image->rotateimage("#000", 90); // rotate 90 degrees CW
+        break;
+
+        case imagick::ORIENTATION_LEFTBOTTOM:
+            $image->rotateimage("#000", -90); // rotate 90 degrees CCW
+        break;
+    }
+}
+for ($i=3; $i<20; $i++) {
+	$dir = "./upload/";
+	$files = scandir($dir, 1);
+	// $temporary = explode(".", $files[$i]);
+    // $file_extension = end($temporary);
+	// if ($file_extension === "jpeg" || $file_extension === "jpg") { 
+	// $image = new Imagick("./upload/".$files[$i]);
+	// $image->setImageCompressionQuality(20);
+	// autoRotateImage($image);
+	// $image->writeImage("./upload/".$files[$i]."_r"); 
+	// echo "<li><img class='slideshow-image' src='upload/".$image."'></li>";
+	// } else {
 	echo "<li><img class='slideshow-image' src='upload/".$files[$i]."'></li>";
 	}
-?>
+	?>
       <!--<li>
           <img src="upload/<?php echo $files[3]?>">
       </li>
@@ -88,6 +112,5 @@ for ($i=3; $i<20; $i++){
 	</div>
 </div>
 <script type="text/javascript" src="assets/js/slideshow.js"></script>
-<?php
-require './template/footer.php';
-?>
+
+<?php require './template/footer.php'; ?>

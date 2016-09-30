@@ -245,7 +245,7 @@ var mnTries = 0;
             processData: false, // To send DOMDocument or non processed data file it is set to false
             success: function(data) // A function to be called if request succeeds
                 {
-                    photoUrl = "http://www.united-agency-server.co.uk/giancarlo/checkin_and_win/upload/"+data;
+                    photoUrl = "http://www.united-agency-server.co.uk/outfit/checkin_and_win/upload/"+data;
                     $(".picture-message").html(data);
 			        FB.api(
   						'/photos/',
@@ -287,9 +287,9 @@ var mnTries = 0;
 		function imageIsLoaded(e) {
 			$("#file").css("color", "green");
 			$('.image_preview').css("display", "block");
-			$('#previewing').attr('src', e.target.result);
-			$('#previewing').attr('width', '250px');
-			$('#previewing').attr('height', '230px');
+			$('.previewing').attr('src', e.target.result);
+			$('.previewing').attr('width', '50px');
+			$('.previewing').attr('height', '50px');
 			$('.confirm').attr('disabled', false);
 		};
 				

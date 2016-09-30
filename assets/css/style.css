@@ -2,6 +2,32 @@
   font-family: "klavika-regular";
   src: url("./webfonts/klavika-regular.otf"); }
 
+.photo-upload {
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto; }
+  .photo-upload label {
+    margin: 10px; }
+  .photo-upload input[type="text"] {
+    padding: 2px 10px !important;
+    display: block;
+    margin: 5px;
+    min-height: 30px;
+    min-width: 300px;
+    margin: 10px auto;
+    border-radius: 3px;
+    border: 0;
+    font-size: 14px; }
+  .photo-upload input[type="file"] {
+    border-radius: 3px;
+    background-color: grey;
+    margin: 10px auto;
+    display: block;
+    padding: 2.5px; }
+  .photo-upload input[type="button"] {
+    display: block;
+    margin: 20px auto; }
+
 .spinner {
   width: 50px;
   height: 20px;
@@ -50,19 +76,37 @@
 a {
   color: #fdad00; }
 
+.previewing {
+  display: block;
+  margin: 0 auto; }
+
 .info-success, .info-no-checkin {
   display: none; }
 
 #file {
-  background-color: white; }
+  background-color: white;
+  margin-bottom: 10px; }
+
+.info2 {
+  text-align: center;
+  margin: 10  px;
+  font-size: 16px; }
 
 .thumbnails {
-  padding-top: 300px; }
+  padding-top: 300px;
+  min-height: 500px; }
 
 .slideshow-image {
-  width: 100px;
-  height: 100px;
-  overflow: hidden; }
+  max-width: 300px;
+  min-height: 200px;
+  image-orientation: from-image; }
+  @media (max-width: 500px) {
+    .slideshow-image {
+      max-width: 100px;
+      min-height: 0; } }
+
+.submit {
+  -webkit-appearance: button; }
 
 .api-container {
   display: flex;
@@ -250,6 +294,18 @@ li {
 
 .tab__fb-login {
   width: 250px; }
+
+.reg__checkbox {
+  margin-bottom: 20px; }
+
+.form {
+  font-family: "klavika-regular", Helvetica, sans-serif;
+  font-size: 20px;
+  padding-left: 5px;
+  margin: 5px 0;
+  height: 40px;
+  border: 0;
+  color: #111; }
 
 .modal-content {
   background-color: #1e1025 !important;

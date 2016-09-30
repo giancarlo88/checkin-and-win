@@ -13,7 +13,7 @@ require './template/header.php';
 ?>
 	<!--<div class = "info"></div>-->
 	<div class="app-wrapper">
-		<form id="photo-upload" class="photo-upload" name="photo-upload" method="post" enctype="multipart/form-data">
+		<form id="photo-upload" class="photo-upload form-container" name="photo-upload" method="post" enctype="multipart/form-data">
 			<div class="info2">Store location:
 				<span class="location">
 				<div class="spinner">
@@ -26,54 +26,43 @@ require './template/header.php';
 			</span><br>
 			</div>
 			<label>1. Open a picture to upload:</label><br>
-			<input id="file" type="file" name="file"><br>
-			<label>2. Click <input type="button" class="confirm" value="here" disabled>to upload the photo of your fave Outfit item to Facebook!</p></label>
-			<img class="previewing">
-			<h6 class="message"></h6>
-			<input type="text" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
-			<input type="" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
-			<input type="" name="fbid" value="" id="fbidField">
-			<div class="reg__form-container">
+			<input class="" id="file" type="file" name="file">
+			<img class="previewing"><br>
+			<label>2. Confirm your details:</label>
+			<input type="hidden" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
+			<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
+			<input type="hidden" name="fbid" value="" id="fbidField">
+			<input type="hidden" name = "location" id="locationField" placeholder="location" class="reg__form">
+			<div class="form-container">
 				<input type="text" name="first_name" id="firstNameField" placeholder="First Name" class="reg__form">
 				<input type="text" name="last_name" id="lastNameField" placeholder="Last Name" class="reg__form">
 				<input type="text" name="email" id="emailField" placeholder="Email" class="reg__form">
-				<input type="" name = "location" id="locationField" placeholder="location" class="reg__form">
-				<div class="form-group">
-					<label class="sr-only" for="emailField">Phone</label>
-				</div>
-				<p class="reg__mn-message">Cracked the <span class="bold">code</span> already? Insert it below:</p>
-				<div class="reg__mystery-numbers">
-				</div>
 				<div class="reg__checkbox-container">
 					<div class="reg__checkbox">
 						<label>
 									<input type="checkbox" checked name="outfit_subscription" id="outfit_SubscriptionField"> I want to receive emails from Outfit
 								</label>
 					</div>
-					<div class="reg__checkbox">
+					<!--<div class="reg__checkbox">
 						<label>		
 									<input type="checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to sign up to receive marketing emails from Thomas Cook. 
 									We will not pass on your data to third parties for marketing. 
 									<a class = "txt-highlight" href="https://www.thomascook.com/privacy-policy/" target="_blank">View Privacy Policy</a>
-								</label>
+								</label> -->
 					</div>
-				</div>
-			</div>
+					<label>3. Click below to upload the photo of your fave Outfit item to Facebook!</label>
+			<input type="button" class="confirm btn" value="Upload" disabled>
 			<div id="modal1" data-backdrop="static" class="scr__modal modal fade" tabindex="-1" role="dialog">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						</div>
+						
 						<div class="modal-body">
-							<img class="previewing modal-preview" src="">
-						</div>
-						<div class="modal-body">
-							<p>You're about to upload this photo to Facebook. Is that ok?.</p>
+							<img class="previewing" src="">
+							<p>You're about to upload this photo to Facebook. Is that ok?</p>
 						</div>
 						<div class="modal-footer">
-							<input type="submit" name="submit" id="submit" class="btn button submit" value="OK"></input>
-							<button class="btn no button" data-dismiss="modal">No </button>
+							<input type="submit" name="submit" id="submit" class="btn button submit" value="Yes"></input>
+							<button class="btn no button" data-dismiss="modal">No</button>
 		</form>
 		</div>
 		</div>

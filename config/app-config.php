@@ -34,7 +34,7 @@ AppConfig::set( array(
 		/**
 		 * Folder/Directory name for client on server i.e. dorothyperkins
 		 */
-		'app_client_dir' => 'giancarlo',
+		'app_client_dir' => 'outfit',
 
 
 		/**

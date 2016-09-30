@@ -27,7 +27,8 @@ if ( isset($_GET['fbid']) && $_GET['fbid'] ) {
 	$first_name = isset($_POST['first_name']) && $_POST['first_name'] ? $_POST['first_name'] : '';
 	$last_name = isset($_POST['last_name']) && $_POST['last_name'] ? $_POST['last_name'] : '';
 	$email = isset($_POST['email']) && $_POST['email'] ? $_POST['email'] : '';
-	$phone = isset($_POST['phone']) && $_POST['phone'] ? $_POST['phone'] : '';
+	$location = isset($_POST['location']) && $_POST['location'] ? $_POST['location'] : '';
+	$photo = isset($_POST['file']) && $_POST['file'] ? $_POST['file'] : '';
 	$fbid = isset($_POST['fbid']) && $_POST['fbid'] ? $_POST['fbid'] : '';
 	$tc_subscription = isset($_POST['tc_subscription']) && $_POST['tc_subscription'] === 'on' ? true : false;
 	$outfit_subscription = isset($_POST['outfit_subscription']) && $_POST['outfit_subscription'] === 'on' ? true : false;
@@ -74,7 +75,8 @@ if ( isset($_GET['fbid']) && $_GET['fbid'] ) {
 				$user->first_name = $first_name;
 				$user->last_name = $last_name;
 				$user->email = $email;
-				$user->phone = $phone;
+				$user->location = $location;
+				$user->photo = $photo;
 				$user->tc_subscription = $tc_subscription;
 				$user->outfit_subscription = $outfit_subscription;
 				$user->from_mobile = $detect->isMobile();

@@ -22,8 +22,11 @@ rgb(0, 179, 181);
 
 .photo-upload {
   padding: 20px;
-  width: 50%;
+  width:50%;
   margin: 0 auto;
+  @media (max-width: 500px){
+    width: 90%;
+  }
     label {
       margin: 10px;
 
@@ -38,6 +41,9 @@ rgb(0, 179, 181);
       border-radius: 3px;
       border: 0;
       font-size: 14px;
+      @media (max-width: 500px){
+        min-width: 250px;
+      }
     }
      input[type="file"] {
        border-radius: 3px;
@@ -50,6 +56,10 @@ rgb(0, 179, 181);
        display: block;
        margin: 20px auto;
      }
+}
+
+.modal-loading, .message{
+text-align: center;
 }
 
 .spinner {
@@ -112,6 +122,8 @@ a {
 .previewing {
   display: block;
   margin: 0 auto;
+  width: 25%;
+  max-width: 200px;
 }
 
 .info-success, .info-no-checkin {
@@ -123,10 +135,11 @@ a {
   margin-bottom: 10px;
 }
 
-.info2 {
+.upload-info {
   text-align: center;
-  margin: 10  px;
-  font-size: 16px;
+  margin: 20px;
+  font-size: 20px;
+  color: $tc-orange;
 }
 
 .thumbnails {
@@ -137,10 +150,11 @@ a {
 .slideshow-image {
   max-width: 300px;
   min-height: 200px;
- image-orientation: from-image;
+  -webkit-user-select: none;
   @media (max-width: 500px) {
     max-width:100px;
     min-height: 0;
+    image-orientation: from-image;
   }
 }
 
@@ -446,7 +460,8 @@ li {
 // }
 
 .reg__checkbox {
-margin-bottom: 20px;
+  max-width: 300px;
+  margin: 20px auto;
 }
 
 // .reg__checkbox label {

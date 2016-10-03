@@ -9,12 +9,12 @@ require './config.php';
 //require './template/ValidateFormModel.php';
 require './template/header.php';
 // require './template/navigation.php';
-
 ?>
+
 	<!--<div class = "info"></div>-->
 	<div class="app-wrapper">
 		<form id="photo-upload" class="photo-upload form-container" name="photo-upload" method="post" enctype="multipart/form-data">
-			<div class="info2">Store location:
+			<div class="upload-info">Store location:
 				<span class="location">
 				<div class="spinner">
 					<div class="rect1"></div>
@@ -28,6 +28,7 @@ require './template/header.php';
 			<label>1. Open a picture to upload:</label><br>
 			<input class="" id="file" type="file" name="file">
 			<img class="previewing"><br>
+			<div class="message"></div>
 			<label>2. Confirm your details:</label>
 			<input type="hidden" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
 			<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
@@ -50,7 +51,7 @@ require './template/header.php';
 									<a class = "txt-highlight" href="https://www.thomascook.com/privacy-policy/" target="_blank">View Privacy Policy</a>
 								</label> -->
 					</div>
-					<label>3. Click below to upload the photo of your fave Outfit item to Facebook!</label>
+					<label>3. Click below to upload the photo of your favourite Outfit item to Facebook!</label>
 			<input type="button" class="confirm btn" value="Upload" disabled>
 			<div id="modal1" data-backdrop="static" class="scr__modal modal fade" tabindex="-1" role="dialog">
 				<div class="modal-dialog" role="document">
@@ -58,7 +59,7 @@ require './template/header.php';
 						
 						<div class="modal-body">
 							<img class="previewing" src="">
-							<p>You're about to upload this photo to Facebook. Is that ok?</p>
+							<p>You're about to upload this photo to Facebook. Is that OK?</p>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" name="submit" id="submit" class="btn button submit" value="Yes"></input>

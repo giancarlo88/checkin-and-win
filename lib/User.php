@@ -27,7 +27,6 @@ class User extends BaseApp	{
 				'email' => '',
 				'location' => '',
 				'photo' => '',
-				'tc_subscription' => false,
 				'outfit_subscription' => false,
 				'from_mobile' => false,
 				'from_tablet' => false,
@@ -66,7 +65,6 @@ class User extends BaseApp	{
 			`email`,
 			`location`,
 			`photo`,
-			CAST(`tc_subscription` AS UNSIGNED) AS `tc_subscription`,
 			CAST(`outfit_subscription` AS UNSIGNED) AS `outfit_subscription`,
 			`from_mobile`,
 			`from_tablet`,
@@ -124,7 +122,6 @@ class User extends BaseApp	{
 			`email`,
 			`location`,
 			`photo`,
-			CAST(`tc_subscription` AS UNSIGNED) AS `tc_subscription`,
 			CAST(`outfit_subscription` AS UNSIGNED) AS `outfit_subscription`,
 			`from_mobile`,
 			`from_tablet`,
@@ -195,7 +192,6 @@ class User extends BaseApp	{
 			$query .= sprintf( " `email` = '%s',", AppFunction::sanitize($this->email) );
 			$query .= sprintf( " `location = '%s',", AppFunction::sanitize($this->location) );
 			$query .= sprintf( " `photo = '%s',", AppFunction::sanitize($this->location) );
-			$query .= sprintf( " `tc_subscription` = %d,", $this->tc_subscription );
 			$query .= sprintf( " `outfit_subscription` = %d,", $this->outfit_subscription );
 			$query .= sprintf( " `from_mobile` = %d,", $this->from_mobile );
 			$query .= sprintf( " `from_tablet` = %d,", $this->from_tablet );
@@ -210,14 +206,13 @@ class User extends BaseApp	{
 		}
 		else	{
 			$query = sprintf( "INSERT INTO `%s`.`%s` ", DBConfig::dbName(), DBConfig::dbTable(static::TABLE) );
-			$query .= sprintf( "(`fbid`, `first_name`, `last_name`, `email`, `location`, `photo`, `tc_subscription`, `outfit_subscription`, `from_mobile`, `from_tablet`, `browser`, `ip_address`, `updated_at`)  VALUES (" );
+			$query .= sprintf( "(`fbid`, `first_name`, `last_name`, `email`, `location`, `photo`, `outfit_subscription`, `from_mobile`, `from_tablet`, `browser`, `ip_address`, `updated_at`)  VALUES (" );
 			$query .= sprintf( "'%s',", AppFunction::sanitize($this->fbid) );
 			$query .= sprintf( "'%s',", AppFunction::sanitize($this->first_name) );
 			$query .= sprintf( "'%s',", AppFunction::sanitize($this->last_name) );
 			$query .= sprintf( "'%s',", AppFunction::sanitize($this->email) );
 			$query .= sprintf( "'%s',", AppFunction::sanitize($this->location) );
 			$query .= sprintf( "'%s',", AppFunction::sanitize($this->photo) );
-			$query .= sprintf( "%d,", $this->tc_subscription );
 			$query .= sprintf( "%d,", $this->outfit_subscription );
 			$query .= sprintf( "%d,", $this->from_mobile );
 			$query .= sprintf( "%d,", $this->from_tablet );
